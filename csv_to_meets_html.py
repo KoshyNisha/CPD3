@@ -29,8 +29,8 @@ def csv_to_html(csv_filename, output_folder):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{link_text}</title>
-<link rel="stylesheet" href="../css/reset.css">
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
    <body>
    <a href = "#main">Skip to Main Content</a>
@@ -98,20 +98,39 @@ def csv_to_html(csv_filename, output_folder):
     <img src="../images/profiles/{profile_pic}" width="200" alt="Profile picture of {name}"> 
     <figcaption>{name}</figcaption>
 </figure>
-<dl>
-    <dt>Place</dt><dd>{place}</dd>
-    <dt>Time</dt><dd>{time}</dd>
-    <dt>Grade</dt><dd>{grade}</dd>
-</dl>
+
+<details>
+    <summary>Athlete Stats</summary>
+    <p><strong>Place:</strong> {place}</p>
+    <p><strong>Time:</strong> {time}</p>
+    <p><strong>Grade:</strong> {grade}</p>
+</details>
+
 </div>
 """
 
         html_content += """</section>\n
         <section id = "gallery">
         <h2>Gallery</h2>
+        <details>
+            <summary>View Gallery</summary>
+            <img src="../images/meets/holly/09-14 Holly Invitational 01.jpg" alt="Group shot of Ann Arbor Skyline Men's Division at Holly Invitational before race begins.">
+            <img src="../images/meets/holly/09-14 Holly Invitational 02.jpg" alt="Group shot of Ann Arbor Skyline Men's Division running at Holly Invitational.">
+            <img src="../images/meets/holly/09-14 Holly Invitational 03.jpg" alt="Close up of a determined athlete running at Holly Invitational.">
+            <img src="../images/meets/holly/09-14 Holly Invitational 04.jpg" alt="Two athletes running at Holly Invitational, faces concentrated.">
+            <img src="../images/meets/holly/09-14 Holly Invitational 05.jpg" alt="Another athlete overtakes two Skyline athletes at the Holly Invitational.">
+            
+            <img src="../images/meets/holly/20240914_124622_002_01.jpg" alt="Women's team running at Holly Invitational. Athlete in the lead rounds the corner of a tree. ">
+            <img src="../images/meets/holly/20240914_124642_004_01.jpg" alt="Many athletes quicken their pace to catch up at the Women's Holly Invitational.">
+            <img src="../images/meets/holly/20240914_124642_019_01.jpg" alt="Close up of athletes running. One athlete's hair flows behind her as she runs.">
+            <img src="../images/meets/holly/20240914_124622_002_01.jpg" alt="A determined athlete runs at the women's Holly Invitational.">
+            <img src="../images/meets/holly/IMG_9357.jpg" alt="Three athletes run in a grassy field at the Holly Invitational.">
+        
+        </details>
         """
-
-        html_content += create_meet_image_gallery(url)
+        
+        
+        #html_content += create_meet_image_gallery(url)
         # Close the HTML document
         html_content += """
    </section>
@@ -209,7 +228,7 @@ def create_meet_image_gallery(url):
     # Define the folder path for images based on the meet ID
     folder_path = f'images/meets/{meet_id}/'
 
-    # print(f"The folder path is {folder_path}")
+    print(f"The folder path is {folder_path}")
     
     if not os.path.exists(folder_path):
         return ""
