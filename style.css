@@ -232,6 +232,7 @@ header h1 a{
     size:50%;
 }
 
+/*adjusts for color contrast */
 @media (prefers-contrast: more) {
     body {
         color: white;
