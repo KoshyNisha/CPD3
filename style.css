@@ -199,7 +199,7 @@ footer a {
 }
 
 /* ensure users with prefers-reduced-motion do not view intense animations but still see some animation*/
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: reduce) {
     @keyframes colorTransition {
         0%   {color:#48e288;}
         50%  {color:#95e4b6;}
