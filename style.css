@@ -116,6 +116,13 @@ tbody{
     font-size: 20px;
 }
 
+#individual-results{
+    display:grid;
+    grid-template-columns: 25% 25% 25%;
+    justify-content: space-around;
+    align-items: center;
+}
+
 /* style athlete boxes */
 #individual-results .athlete{
     background-color:rgb(6, 48, 49);
@@ -248,5 +255,3 @@ body {
 *{
     color:white;
 }
-
-
