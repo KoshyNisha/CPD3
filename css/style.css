@@ -116,6 +116,13 @@ tbody{
     font-size: 20px;
 }
 
+#individual-results{
+    display:grid;
+    grid-template-columns: 25% 25% 25%;
+    justify-content: space-around;
+    align-items: center;
+}
+
 /* style athlete boxes */
 #individual-results .athlete{
     background-color:rgb(6, 48, 49);
@@ -199,7 +206,7 @@ footer a {
 }
 
 /* ensure users with prefers-reduced-motion do not view intense animations but still see some animation*/
-@media (prefers-reduced-motion) {
+@media (prefers-reduced-motion: reduce) {
     @keyframes colorTransition {
         0%   {color:#48e288;}
         50%  {color:#95e4b6;}
@@ -248,5 +255,3 @@ body {
 *{
     color:white;
 }
-
-
